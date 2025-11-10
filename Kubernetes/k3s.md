@@ -20,3 +20,22 @@ kubectl get nodes
 ```bash
 sudo systemctl stop k3s
 ```
+
+```bash
+# Check k3s service status
+sudo systemctl status k3s
+
+# Check k3s logs 
+sudo journalctl -u k3s -n 50
+
+# Stop k3s
+sudo systemctl stop k3s
+# Wait for complete
+stop sleep 5
+
+# Start k3s
+sudo systemctl start k3s
+sleep 15
+kubectl get pods -n sentiment-app
+sudo systemctl status k3s
+```
